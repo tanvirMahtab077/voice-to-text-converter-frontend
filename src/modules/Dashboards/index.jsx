@@ -85,7 +85,7 @@ const Dashboard = () => {
   }));
   if (isLoading) return <AppLoader />;
   return (
-    <div style={{ padding: "10px 50px" }}>
+    <div style={{ padding: "0 10px" }}>
       <TitleHeader title="Dashboard" className="mb-[34px]" />
       <Dragger {...props} style={{ marginBottom: "20px" }} accept="audio/mp3">
         <p className="ant-upload-drag-icon">

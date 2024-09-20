@@ -72,7 +72,7 @@ const AllConversation = () => {
   if (isLoading) return <AppLoader />;
   console.log(data);
   return (
-    <div style={{ padding: "10px 50px" }}>
+    <div style={{ margin:'0 10px' }}>
       <TitleHeader title="All Conversation" className="mb-[34px]" />
       <Table
         dataSource={dataSource}

@@ -56,7 +56,7 @@ const Users = () => {
   console.log(data);
   if (isLoading) return <AppLoader />;
   return (
-    <div style={{padding:'10px 50px'}}>
+    <div style={{padding:'0 10px'}}>
       <TitleHeader title="Employees" className="mb-[34px]" />
       <Table dataSource={dataSource} columns={columns} 
       pagination={{

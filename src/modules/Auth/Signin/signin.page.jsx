@@ -1,11 +1,11 @@
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Grid, Input, theme, Typography } from "antd";
+import { Button, Checkbox, Form, Input, theme, Typography } from "antd";
 import { FormikProvider, useFormik } from "formik";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../../assets/logo.png";
+import { useBreakpoints } from "../../../core/hooks/useBreakpoints";
 import SignInSchema from "./Schema";
 const { useToken } = theme;
-const { useBreakpoint } = Grid;
 const { Text } = Typography;
 // const BackgroundWrapper = styled.div`
 //    background-image: url('https://audiotext.kodeend.com/bg/colors.png'); /* Adjust the image path */
@@ -17,10 +17,10 @@ const { Text } = Typography;
 // `;
 export default function SigninPage() {
   const { token } = useToken();
-  const screens = useBreakpoint();
+  const screens = useBreakpoints().currentScreen;
   const navigate = useNavigate();
   const location = useLocation();
-
+console.log(screens);
   const formik = useFormik({
     initialValues: {
       email: "admin@gmail.com",
@@ -68,7 +68,7 @@ export default function SigninPage() {
     section: {
       alignItems: "center",
       display: "flex",
-      height: screens.sm ? "100vh" : "auto",
+      height: "100vh",
       padding: !screens.md ? `${token.sizeXXL}px 0px` : "0px",
       backgroundImage: "linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)"
     },
